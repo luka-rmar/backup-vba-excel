@@ -1,0 +1,16 @@
+Function gerarBackup()
+
+Application.ScreenUpdating = False
+Dim nome As String
+Dim caminho As String
+Dim ref As String
+
+ref = "data- " & Format(Now(), "dd_mmm_yyyy_ ") & "hora- " & Format(Now(), "hh_mm_ss_ ")
+nome = ref & Application.ThisWorkbook.name
+caminho = "\\ITABUS\operacional1\Administrativo - Operacional\Gestão e Qualidade - Operacional\17 - Backups\Projeto_controle\"
+
+Application.DisplayAlerts = False
+Application.ThisWorkbook.SaveCopyAs caminho & nome
+Application.ScreenUpdating = True
+
+End Function
